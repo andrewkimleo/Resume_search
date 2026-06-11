@@ -1,0 +1,45 @@
+# Redrob Hackathon — Submission Metadata
+team_name: "Antigravity"
+
+primary_contact:
+  name: "User"
+  email: "user@example.com"
+  phone: "+91-0000000000"
+
+team_members:
+  - name: "User"
+    email: "user@example.com"
+    role: "AI Engineer"
+
+github_repo: "https://github.com/user/redrob-hackathon-antigravity"
+
+sandbox_link: "https://huggingface.co/spaces/user/redrob-ranker"
+
+reproduce_command: "python rank.py --candidates ./[PUB] India_runs_data_and_ai_challenge/India_runs_data_and_ai_challenge/candidates.jsonl.gz --out ./team_antigravity.csv"
+
+compute:
+  platform: "Local Machine"
+  cpu_cores: 8
+  ram_gb: 16
+  python_version: "3.11"
+  os: "Windows 11"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+ai_tools_used:
+  - "Gemini"
+
+ai_usage_summary: |
+  Used Gemini as an AI coding assistant (Antigravity) to build the data processing pipelines, optimize the ranking algorithms for low memory constraints (streaming JSON parsing with heap-based top-K extraction), and ensure adherence to compute constraints.
+
+methodology_summary: |
+  Fully offline, rule-based ranker designed for strict computational constraints (streaming 100K candidates under 5 mins without high memory load). It evaluates five core pillars: Core Skills match (with trust multipliers on years used/endorsements), Experience match, Title relevance, and a powerful Behavioral Modifier derived from Redrob signals (recruiter response rate, GitHub activity, interview completion rate). It implements a strict Honeypot Disqualification protocol to filter impossible profiles (e.g. 0 years used but expert proficiency). 
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true
